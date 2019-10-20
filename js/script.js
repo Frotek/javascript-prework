@@ -14,7 +14,7 @@ if (randomNumber === 1) {
 
 printMessage('Mój ruch to: ' + computerMove);
 
-let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
+let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: nożyce, 3: papier.');
 
 console.log('Gracz wpisał: ' + playerInput);
 
@@ -26,7 +26,7 @@ if (playerInput == '1') {
   playerMove = 'nożyce';
 } else if (playerInput == '3') {
   playerMove = 'papier';
-} else if (playerInput >== 4) {
+} else if (playerInput >= 4) {
   printMessage('Liczby tylko od 1-3')
 }
 
@@ -42,10 +42,8 @@ if (computerMove === 'kamień' && playerMove === 'papier') {
   printMessage('Komputer wygrywa!')
 } else if (computerMove === 'nożyce' && playerMove === 'papier') {
   printMessage('Komputer wygrywa!')
-} else if (ComputerMove === 'kamień' && playerMove === 'nożyce') {
+} else if (computerMove === 'kamień' && playerMove === 'nożyce') {
   printMessage('Komputer wygrywa!')
-}
-
-if (computerMove === playerMove) {
+} else if (computerMove === playerMove){
   printMessage('REMIS !!')
 }
