@@ -1,10 +1,8 @@
-const playerMove = getMoveName(Number(prompt('Wybierz swój ruch! 1: kamień, 2: nożyce, 3: papier'))),
-  argPlayerMove = getMoveName(playerMove);
+const playerMove = getMoveName(Number(prompt('Wybierz swój ruch! 1: kamień, 2: nożyce, 3: papier')));
 
 console.log('Gracz wpisał: ' + playerMove);
 
-const randomNumber = Math.floor(Math.random() * 3 + 1),
-  argComputerMove = getMoveName(randomNumber);
+const randomNumber = Math.floor(Math.random() * 3 + 1);
 
 console.log('Wylosowana liczba to: ' + randomNumber);
 
@@ -28,11 +26,9 @@ function getMoveName(argMoveId) {
     return 'nieznany ruch';
 }
 
-const displayResult = function displayResult(argComputerMove, argPlayerMove) {
+function displayResult(argComputerMove, argPlayerMove) {
 
-  displayResult(argComputerMove, argPlayerMove);
-
-  console.log('moves:', argComputerMove, argPlayerMove);
+  console.log('moves:', computerMove, playerMove);
 
   printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
 
@@ -48,3 +44,5 @@ const displayResult = function displayResult(argComputerMove, argPlayerMove) {
     printMessage('Przegrywasz!');
   }
 }
+
+displayResult(computerMove, playerMove);
