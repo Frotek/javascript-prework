@@ -9,9 +9,6 @@ function playGame(playerInput) {
 
   const randomNumber = Math.floor(Math.random() * 3 + 1);
 
-  argComputerMove = getMoveName(randomNumber);
-  argPlayerMove = getMoveName(playerInput);
-
   console.log('Wylosowana liczba to: ' + randomNumber);
 
   const computerMove = getMoveName(randomNumber);
@@ -36,7 +33,7 @@ function playGame(playerInput) {
 
   function displayResult(argComputerMove, argPlayerMove) {
 
-    console.log('moves:', computerMove, playerMove);
+    console.log('moves:', argComputerMove, argPlayerMove);
 
     printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
 
@@ -52,9 +49,8 @@ function playGame(playerInput) {
       printMessage('Przegrywasz!');
     }
   }
-  displayResult(argComputerMove, argPlayerMove);
+  displayResult(computerMove, playerMove);
 }
-
 document.getElementById('play-rock').addEventListener('click', function() {
   playGame(1);
 });
