@@ -30,17 +30,21 @@ function getMoveName(argMoveId) {
 
 const displayResult = function displayResult(argComputerMove, argPlayerMove) {
 
+  displayResult(argComputerMove, argPlayerMove);
+
+  console.log('moves:', argComputerMove, argPlayerMove);
+
   printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
 
   if (argComputerMove === 'kamień' && argPlayerMove === 'papier') {
-    return 'Ty wygrywasz!';
+    printMessage('Ty wygrywasz');
   } else if (argComputerMove === 'papier' && argPlayerMove === 'nożyce') {
-    return 'Ty wygrywasz!';
+    printMessage('Ty wygrywasz!');
   } else if (argComputerMove === 'nożyce' && argPlayerMove === 'kamień') {
-    return 'Ty wygrywasz!';
+    printMessage('Ty wygrywasz!');
   } else if (argComputerMove === argPlayerMove) {
-    return 'REMIS !!';
+    printMessage('REMIS !!');
   } else {
-    return 'Przegrywasz!';
+    printMessage('Przegrywasz!');
   }
 }
