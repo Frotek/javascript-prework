@@ -1,5 +1,20 @@
+{
 function playGame(playerInput) {
   clearMessages();
+
+  const getMoveName = function(argMoveId) {
+    if (argMoveId === 1) {
+      return 'kamień';
+    } 
+    if (argMoveId === 2) {
+      return 'nożyce';
+    }
+    if (argMoveId === 3) {
+      return 'papier';
+    } else if (argMoveId >= 4) (
+      printMessage('Nie znam ruchu o id ' + argMoveId + '.'));
+      return 'nieznany ruch';
+  }
 
   const playerMove = getMoveName(playerInput);
 
@@ -17,21 +32,7 @@ function playGame(playerInput) {
 
   printMessage('Twój ruch to: ' + playerMove);
 
-  function getMoveName(argMoveId) {
-    if (argMoveId === 1) {
-      return 'kamień';
-    } 
-    if (argMoveId === 2) {
-      return 'nożyce';
-    }
-    if (argMoveId === 3) {
-      return 'papier';
-    } else if (argMoveId >= 4) (
-      printMessage('Nie znam ruchu o id ' + argMoveId + '.'));
-      return 'nieznany ruch';
-  }
-
-  function displayResult(argComputerMove, argPlayerMove) {
+  const displayResult = function(argComputerMove, argPlayerMove) {
 
     console.log('moves:', argComputerMove, argPlayerMove);
 
@@ -62,3 +63,4 @@ document.getElementById('play-scissors').addEventListener('click', function() {
 document.getElementById('play-paper').addEventListener('click', function() {
   playGame(3);
 });
+}
